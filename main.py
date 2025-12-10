@@ -8,12 +8,14 @@ class Personal_Notes:
         self.contact = None
 
     def add_notes(self,note):
+        """This method adds a note to the notes list"""
         detailed_note={}
         date = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
         detailed_note[date] = note
         self.notes.append(detailed_note)
 
     def search_notes(self,note):
+        """This method searches for notes in the notes list"""
         matched_notes=[]
         for note_details in self.notes:
             if note in note_details.values():
@@ -26,18 +28,17 @@ class Personal_Notes:
 
 
     def delete_notes(self,note):
+        """This method deletes a note from the notes list"""
         for note_details in self.notes:
             if note in note_details.values():
                 self.notes.remove(note_details)
 
-
-    def update_notes(self,note):
-        pass
-
     def show_notes(self):
+        """This method displays all the notes in the notes list"""
         print(self.notes)
 
     def user_info(self):
+        """This method accepts information about the user"""
         user_info=input("Enter name,email,contact:\t").split(",")
         self.name = user_info[0]
         self.email = user_info[1]
@@ -50,11 +51,8 @@ class Personal_Notes:
         # self.email=input("Enter your email: ")
         # self.contact=input("Enter your contact: ")
 
-
-
-    def accept_notes(self,note):
-        pass
     def menu(self):
+        """This method displays the menu with all operations"""
         while True:
             print("!!!!!!!!!!!!!!!!!!- Note Organizer -!!!!!!!!!!!!!!!!!!"
                   "\n1.Add User Information with notes"
@@ -82,6 +80,8 @@ class Personal_Notes:
                 continue
             else:
                 break
+
+
 if __name__ == '__main__':
     day1 = Personal_Notes()
     day1.menu()
