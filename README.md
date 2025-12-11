@@ -26,7 +26,7 @@ Display all stored notes or user entries in a structured and readable format.
 
 ### 4️⃣ Search Notes
 
-Search through notes using keywords, names, or any matching text to quickly find what you need.
+Search through notes using notes find what you need.
 
 ### 5️⃣ Delete Notes
 
