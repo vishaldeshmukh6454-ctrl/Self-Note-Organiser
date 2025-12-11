@@ -1,4 +1,5 @@
 import datetime
+from stored_in_json import write_data
 
 class Personal_Notes:
     def __init__(self):
@@ -59,14 +60,19 @@ class Personal_Notes:
                   "\n2.Add Note"
                   "\n3.Show Notes"
                   "\n4.Search Note"
-                  "\n5.Delete Note")
+                  "\n5.Delete Note"
+                  "\n6.Save to Json File")
+            print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
             user_choice = int(input("Enter your choice: "))
             match user_choice:
                 case 1:
                     self.user_info()
                 case 2:
-                    new_note = input("Enter new note: ")
-                    self.add_notes(note=new_note)
+                    if self.name and self.email and self.contact:
+                        new_note = input("Enter new note: ")
+                        self.add_notes(note=new_note)
+                    else:
+                        print("!!! WARNING:Please enter user's name ,email and contact.!!!")
                 case 3:
                     self.show_notes()
                 case 4:
@@ -74,6 +80,15 @@ class Personal_Notes:
                     self.search_notes(search_note)
                 case 5:
                     self.delete_notes(note=input("Enter your note to delete: "))
+                case 6:
+                    file_name = input("Enter file name: ")
+                    final_dict ={
+                        "name":self.name,
+                        "email":self.email,
+                        "contact":self.contact,
+                        "notes":self.notes,
+                    }
+                    write_data(final_dict,file_name)
 
             user_choice = input("Do you want do it again?(y/n)")
             if user_choice == "y":
