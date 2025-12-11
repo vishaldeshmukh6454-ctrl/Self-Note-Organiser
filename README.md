@@ -95,11 +95,9 @@ Data is saved in the following format:
 ## 🛠 Requirements
 
 * Python 3.x
-* No external dependencies (unless your project adds some)
-
 ---
 
-## 📌 Future Enhancements (Optional Ideas)
+## 📌 Future Enhancements
 
 * Add password protection
 * Add categories/tags for easier filtering
